@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cross Product</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&family=Bree+Serif&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<body>
+  <style>
+    body{
+      background-color: #1e1e1e;
+    }
+    navbar{
+      font-family: 'Bree Serif', serif;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    header{
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Baloo Bhai 2', cursive;
+      font-size: 22px;
+      position: relative;
+      top: 50px;
+    }
+    .op{
+      border: 3px solid white;
+      border-radius: 20px;
+      padding: 20px 20px; 
+    }
+    .form-control{
+      display: inline;
+      width: 100px;
+      text-decoration: none;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+  }
+  .btn, .btn-primary{
+    display: block;
+    width: auto;
+    margin: auto;
+    border-radius: 20px;
+  }
+  .foot{
+    background-color: #304146;
+    position: relative;
+    top: 200px;
+    height: 230px;
+    color: white;
+  }
+  .copyright{
+    background-color: black;
+    color: white;
+    position: relative;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ans1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+  }
+  .Answer{
+    width: fit-content;
+    border: 3px solid white;
+    font-size: 25px;
+    color: white;
+    text-decoration:solid;
+    border-radius: 20px;
+    padding: 10px 10px;
+    font-family: 'Baloo Bhai 2', cursive;
+
+  }
+  #idk1,#idk2,#idk3{
+    display: inline;
+  }
+  .foot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 22px;
+  }
+  </style>
+  <navbar>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Cross Product</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  </navbar>
+  <header id="o2">
+    <form class="op">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Enter First Vector:</label>
+        <br>
+        <input type="number" class="form-control" id="a">&nbsp &nbsp î &nbsp + &nbsp
+        <input type="number" class="form-control" id="b">&nbsp &nbsp ĵ &nbsp + &nbsp
+        <input type="number" class="form-control" id="c">&nbsp &nbsp <b>k̂</b>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Enter Second Vector:</label>
+        <br>
+        <input type="number" class="form-control" id="x">&nbsp &nbsp î &nbsp + &nbsp
+        <input type="number" class="form-control" id="y">&nbsp &nbsp ĵ &nbsp + &nbsp
+        <input type="number" class="form-control" id="z">&nbsp &nbsp <b>k̂</b>
+      </div>
+      <br>
+      <button type="submit" onclick="cross(); return false;" class="btn btn-primary">Submit</button>
+    </form>
+  </header>
+  <div class="ans1">
+  <div class="Answer"><b>The Answer Is:</b> <p id="idk1"></p><p id="idk2"></p><p id="idk3"></p></div>
+  </div>
+  <footer>
+    <div class="foot">
+        <p>Find The Vector/Cross Product Of A Vector In Just One Click Using Our Tool</p>
+        <br>
+        <p>Quick And Easiest Way To Find Cross Prodcut</p>
+    </div>
+  </footer>
+  <copyright>
+    <div class="copyright"> © 2023 Copyright by Cross Product. All Rights Reserved.</div>
+  </copyright>
+  <script>
+    function cross(){
+      let a = document.getElementById('a').value;
+      let b = document.getElementById('b').value;
+      let c = document.getElementById('c').value;
+      let x = document.getElementById('x').value;
+      let y = document.getElementById('y').value;
+      let z = document.getElementById('z').value;
+      let f = b*z-y*c;
+      let d = "k̂";
+      d= d.bold();
+      if(a==''|| b==''||c==''||x==''||y==''||z=='')
+      {
+        alert("Please Enter In All The Provided Boxes");
+      }
+      else
+      {
+      document.getElementById("idk1").innerHTML='\xa0' + f+"î"+'\xa0';
+      if(-(a*z-c*x)<0)
+      {
+        document.getElementById("idk2").innerHTML='\xa0' + -(a*z-c*x)+"ĵ"+'\xa0';
+      }     
+      else{
+        document.getElementById("idk2").innerHTML='\xa0'+ "+" + -(a*z-c*x)+"ĵ"+'\xa0';
+      }
+      let h = a*y-b*x;
+      if(h<0){
+      document.getElementById('idk3').innerHTML = '\xa0' + h +" "+d+'\xa0';;
+      }
+      else{
+      document.getElementById('idk3').innerHTML = '\xa0' + "+" + h +""+d+ '\xa0';;
+      }
+      }
+    }
+  </script>
+</body>
+</html>
